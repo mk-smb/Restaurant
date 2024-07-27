@@ -1,59 +1,12 @@
 $(".testimonial-carousel").owlCarousel({
-    // items: 1,
+    items: 1,
     // nav: true,
     // dots: true,
     margin: 20,
     loop: true,
     autoplay: true,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        768:{
-            items:2,
-            nav:false
-        },
-        1024:{
-            items:3,
-            nav:true,
-            loop:false
-        }
-    }
 })
 
-$(".partner-carousel").owlCarousel({
-    // items: 4,
-    loop: true,
-    nav: false,
-    // dots: true,
-    margin: 20,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        768:{
-            items:3,
-            nav:false
-        },
-        1024:{
-            items:4,
-            nav:true,
-            loop:false
-        }
-    }
-})
-
-    // partners carousel
-     $('.hero-prev').click(function() {
-        $('.owl-carousel').trigger('prev.owl.carousel');
-      });
-      $('.hero-next').click(function() {
-        $('.owl-carousel').trigger('next.owl.carousel');
-      });
 
     //   testimonials carousel
      $('.review-prev').click(function() {
@@ -63,10 +16,28 @@ $(".partner-carousel").owlCarousel({
         $('.owl-carousel').trigger('next.owl.carousel');
       });
 
-// navigation
+// tab content
 
-$(document).ready(function () {
-    $('#menu-toggle').click(function () {
-        $('#navbar-menu').toggleClass('hidden block');
-    });
-});
+function openPage(pageName, elmnt, color) {
+  // Hide all elements with class="tabcontent" by default */
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Remove the background color of all tablinks/buttons
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.color = "";
+  }
+
+  // Show the specific tab content
+  document.getElementById(pageName).style.display = "block";
+
+  // Add the specific color to the button used to open the tab content
+  elmnt.style.color = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();

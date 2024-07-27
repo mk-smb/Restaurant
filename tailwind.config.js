@@ -4,9 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#38b2ac',
-        secondary: '#4fd1c5',
-        tertiary: '#2c8a8a'
+        primary: '#B22222',
+        accent: '#FFA07A',
       },
       container: {
         center: true,
@@ -16,4 +15,3 @@ module.exports = {
   },
   plugins: [],
 }
-
